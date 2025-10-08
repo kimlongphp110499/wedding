@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thiệp Cưới Khánh & Võ</title>
+  <meta name="description" content="Thiệp cưới online - Khánh & Võ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="stype.css" />
+</head>
+<body>
+  <div id="intro-overlay">
+    <div id="falling-petals"></div>
+  <canvas id="fireworks-canvas" width="800" height="600"></canvas>
+    <div class="door" id="door-left"></div>
+    <div class="door" id="door-right"></div>
+    <div class="intro-couple-center">
+      <img src="images/MIT06069.jpg" alt="Chú rể" class="intro-char" id="intro-groom" />
+      <img src="images/MIT06112.jpg" alt="Cô dâu" class="intro-char" id="intro-bride" />
+    </div>
+    <!-- Centered heart open button -->
+    <div id="intro-text" class="heart-button" role="button" tabindex="0" aria-label="Mở thiệp cưới">
+      <span class="open-text">Mở thiệp cưới</span>
+    </div>
+  </div>
+
+  <!-- Main music: will be played when the intro is clicked -->
+  <audio id="main-audio" preload="auto">
+    <source src="images/A-thousand-years_tainhacchuong.org.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <div id="bg-hearts"></div>
+    <div class="corner-flowers">
+    <div class="flower flower-tl">🌸</div>
+    <div class="flower flower-tr">🌺</div>
+    <div class="flower flower-bl">🌼</div>
+    <div class="flower flower-br">🌼</div>
+  </div>
+  <div class="floral-frame" aria-hidden="true">
+  <!-- TL cluster -->
+  <span class="blossom b1">🌸</span>
+  <span class="blossom b1a">🌺</span>
+  <span class="blossom b1b">🌼</span>
+  <span class="blossom b1c">💮</span>
+  <span class="blossom b1d">🌼</span>
+  <span class="blossom b1e">🌺</span>
+  <span class="blossom b1f">🌿</span>
+  <span class="blossom b1g">🌼</span>
+  <span class="blossom b1h">🌺</span>
+  <span class="blossom b1i">🌿</span>
+  <span class="blossom b1j">💮</span>
+  <span class="blossom b1k">🌸</span>
+  <!-- TOP bridge cluster -->
+  <span class="blossom bt1">🌼</span>
+  <span class="blossom bt2">🌸</span>
+  <span class="blossom bt3">🌼</span>
+  <span class="blossom bt4">💮</span>
+  <span class="blossom bt5">🌿</span>
+  <span class="blossom bt6">🌺</span>
+  <span class="blossom bt7">🌼</span>
+  <span class="blossom bt8">🌺</span>
+  <span class="blossom bt9">🌺</span>
+  <span class="blossom bt10">🌼</span>
+  <span class="blossom bt11">🌸</span>
+  <span class="blossom bt12">💮</span>
+  <span class="blossom bt13">🌿</span>
+  <span class="blossom bt14">🌺</span>
+  <span class="blossom bt15">🌼</span>
+  <span class="blossom bt16">🌺</span>
+  <span class="blossom bt17">🌺</span>
+  <span class="blossom bt18">🌼</span>
+  <span class="blossom bt19">🌸</span>
+  <span class="blossom bt20">🌿</span>
+  <span class="blossom bt21">🌸</span>
+  <span class="blossom bt22">🌺</span>
+  <span class="blossom bt23">🌼</span>
+  <span class="blossom bt24">💮</span>
+  <span class="blossom bt25">🌼</span>
+  <span class="blossom bt26">🌿</span>
+  <span class="blossom bt27">🌼</span>
+  <span class="blossom bt28">🌺</span>
+  <span class="blossom bt29">🌺</span>
+  <span class="blossom bt30">🌿</span>
+  <span class="blossom bt31">🌺</span>
+  <span class="blossom bt32">🌸</span>
+  <span class="blossom bt33">🌼</span>
+  <span class="blossom bt34">💮</span>
+  <span class="blossom bt35">🌼</span>
+  <span class="blossom bt36">🌿</span>
+  <span class="blossom bt37">🌼</span>
+  <span class="blossom bt38">🌸</span>
+  <span class="blossom bt39">🌼</span>
+  <span class="blossom bt40">💮</span>
+  <span class="blossom bt41">🌿</span>
+  <span class="blossom bt42">🌺</span>
+  <span class="blossom bt43">🌼</span>
+  <span class="blossom bt44">🌺</span>
+  <span class="blossom bt45">🌺</span>
+  <span class="blossom bt46">🌿</span>
+  <span class="blossom bt47">🌸</span>
+  <span class="blossom bt48">🌼</span>
+  <span class="blossom bt49">💮</span>
+  <span class="blossom bt50">🌼</span>
+  <span class="blossom bt51">🌿</span>
+  <span class="blossom bt52">🌺</span>
+  <span class="blossom bt53">🌺</span>
+  <span class="blossom bt54">🌿</span>
+  <span class="blossom bt55">🌸</span>
+  <span class="blossom bt56">🌼</span>
+  <span class="blossom bt57">💮</span>
+  <span class="blossom bt58">🌼</span>
+  <span class="blossom bt59">🌿</span>
+  <span class="blossom bt60">🌺</span>
+  <span class="blossom bt61">🌸</span>
+  <span class="blossom bt62">🌺</span>
+  <span class="blossom bt63">🌼</span>
+  <span class="blossom bt64">💮</span>
+  <span class="blossom bt65">🌼</span>
+  <span class="blossom bt66">🌿</span>
+  <span class="blossom bt67">🌼</span>
+  <span class="blossom bt68">🌺</span>
+  <span class="blossom bt69">🌺</span>
+  <span class="blossom bt70">🌿</span>
+  <span class="blossom bt71">🌸</span>
+  <span class="blossom bt72">🌺</span>
+  <span class="blossom bt73">🌼</span>
+  <span class="blossom bt74">💮</span>
+  <span class="blossom bt75">🌼</span>
+  <span class="blossom bt76">🌿</span>
+  <span class="blossom bt77">🌼</span>
+  <span class="blossom bt78">🌺</span>
+  <span class="blossom bt79">🌺</span>
+  <span class="blossom bt80">🌿</span>
+  <span class="blossom bt81">🌸</span>
+  <span class="blossom bt82">🌺</span>
+  <span class="blossom bt83">🌼</span>
+  <span class="blossom bt84">💮</span>
+  <span class="blossom bt85">🌼</span>
+  <span class="blossom bt86">🌿</span>
+  <span class="blossom bt87">🌼</span>
+  <span class="blossom bt88">🌺</span>
+  <span class="blossom bt89">🌺</span>
+  <span class="blossom bt90">🌿</span>
+  <span class="blossom bt91">🌸</span>
+  <span class="blossom bt92">🌺</span>
+  <span class="blossom bt93">🌼</span>
+  <span class="blossom bt94">💮</span>
+  <span class="blossom bt95">🌼</span>
+  <span class="blossom bt96">🌿</span>
+  <span class="blossom bt97">🌼</span>
+  <span class="blossom bt98">🌺</span>
+  <span class="blossom bt99">🌺</span>
+  <span class="blossom bt100">🌿</span>
+  <span class="blossom bt101">🌸</span>
+  <span class="blossom bt102">🌺</span>
+  <span class="blossom bt103">🌼</span>
+  <span class="blossom bt104">💮</span>
+  <span class="blossom bt105">🌼</span>
+  <span class="blossom bt106">🌿</span>
+  <span class="blossom bt107">🌼</span>
+  <span class="blossom bt108">🌺</span>
+  <span class="blossom bt109">🌺</span>
+  <span class="blossom bt110">🌿</span>
+  <span class="blossom bt111">🌸</span>
+  <span class="blossom bt112">🌺</span>
+  <span class="blossom bt113">🌼</span>
+  <span class="blossom bt114">💮</span>
+  <span class="blossom bt115">🌼</span>
+  <span class="blossom bt116">🌿</span>
+  <span class="blossom bt117">🌼</span>
+  <span class="blossom bt118">🌺</span>
+  <span class="blossom bt119">🌺</span>
+  <span class="blossom bt120">🌿</span>
+  </div>
+  <main class="card">
+  <div class="card-effects" aria-hidden="true"></div>
+    <header class="hero">
+      <h1 class="names"><span>Khánh</span><em>&</em><span>Võ</span></h1>
+      <div class="love-doves" aria-hidden="true">
+        <img src="images/doves.png" alt="Đôi chim bồ câu" />
+      </div>
+      <p class="date">15 . 10 . 2025</p>
+    </header>
+
+    <section class="couple">
+      <div class="person bride">
+        <div class="avatar-wrap slideshow" data-role="bride" data-images="images/MIT06112.jpg,images/MIT05992.jpg,images/MIT06149.jpg">
+          <img src="images/MIT06112.jpg" alt="Cô dâu" class="avatar active" />
+          <img src="images/MIT05992.jpg" alt="Cô dâu" class="avatar" />
+          <img src="images/MIT06149.jpg" alt="Cô dâu" class="avatar" />
+          <canvas class="avatar-filter" aria-hidden="true"></canvas>
+        </div>
+        <h3>Cô Dâu</h3>
+        <p class="fullname">Hồ Kim Khánh</p>
+      </div>
+      <div class="person groom">
+        <div class="avatar-wrap slideshow" data-role="groom" data-images="images/MIT06069.jpg,images/MIT06149.jpg">
+          <img src="images/MIT06069.jpg" alt="Chú rể" class="avatar active" />
+          <img src="images/MIT06149.jpg" alt="Chú rể" class="avatar" />
+          <canvas class="avatar-filter" aria-hidden="true"></canvas>
+        </div>
+        <h3>Chú Rể</h3>
+        <p class="fullname">Phan Văn Võ</p>
+      </div>
+    </section>
+<!-- 
+    <section class="countdown" id="countdown">
+      <div class="time"><span id="d">00</span><label>Ngày</label></div>
+      <div class="time"><span id="h">00</span><label>Giờ</label></div>
+      <div class="time"><span id="m">00</span><label>Phút</label></div>
+      <div class="time"><span id="s">00</span><label>Giây</label></div>
+    </section> -->
+
+    <section class="info-grid">
+      <div class="info-item">
+        <h4>Thời gian</h4>
+        <p>10:00 - 15/10/2025</p>
+      </div>
+      <div class="info-item">
+        <h4>Địa điểm</h4>
+        <p>Thôn 13, xã Kbang<br/>Gia Lai</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="thanks">Trân trọng kính mời</p>
+      <p class="mini">Hân hạnh được đón tiếp!</p>
+      <div class="running-note-wrap" aria-hidden="true">
+        <div class="running-note">Sự hiện diện của các bạn sẽ làm cho lễ thành hôn của chúng tôi thêm hạnh phúc, ý nghĩa hơn bao giờ hết! Rất vinh hạnh được đón tiếp các bạn</div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="script.js"></script>
+</body>
+</html>
