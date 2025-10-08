@@ -8,6 +8,20 @@ window.addEventListener('DOMContentLoaded', () => {
 function initIntroAnimation() {
   const introOverlay = document.getElementById('intro-overlay');
   if (!introOverlay) return;
+  // Quick debug flag: allow skipping the intro via URL (?skipIntro or #skipIntro)
+  try {
+    const url = new URL(window.location.href);
+    const skip = url.searchParams.has('skipIntro') || window.location.hash === '#skipIntro';
+    if (skip) {
+      // Reveal card immediately for debugging/testing
+      const card = document.querySelector('.card');
+      if (card) card.style.visibility = 'visible';
+      introOverlay.style.display = 'none';
+      // still run main animations to initialize interactive parts
+      runMainAnimations();
+      return;
+    }
+  } catch (e) { /* ignore URL parsing errors */ }
   // if gsap not available, still attach click handler to open card
   if (!window.gsap) {
     const btn = document.getElementById('intro-text');
