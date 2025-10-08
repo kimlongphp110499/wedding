@@ -339,16 +339,30 @@ body { background:var(--bg-grad); min-height:100dvh; display:flex; align-items:c
 /* =============== HERO =============== */
 .hero { text-align:center; display:flex; flex-direction:column; gap:10px; }
 .tag { display:inline-block; padding:4px 14px 5px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; background:#ffffffcc; border:1px solid var(--c-line); border-radius:40px; color:var(--c-text-soft); box-shadow:var(--shadow-sm); backdrop-filter:blur(6px); }
-.names { font-family:'Great Vibes',cursive; font-size:clamp(44px,11vw,68px); line-height:1; font-weight:400; color:#b54762; display:flex; align-items:center; justify-content:center; gap:.35em; z-index: 9999999; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+.names { font-family:'Great Vibes',cursive; font-size:clamp(44px,11vw,68px); line-height:1; font-weight:400; color:#e80b37; display:flex; align-items:center; justify-content:center; gap:.35em; z-index: 9999999; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
 .names span { text-shadow:0 3px 8px rgba(0,0,0,0.12); }
 .names em { text-shadow:0 2px 4px rgba(0,0,0,0.08); }
-.names em { font-style:normal; font-size:.6em; color:#c06a7b; position:relative; top:-6px; animation:amp 3s ease-in-out infinite; }
+.names em { font-style:normal; font-size:.6em; color:#e80b37; position:relative; top:-6px; animation:amp 3s ease-in-out infinite; }
 .date { font-family:'Playfair Display',serif; font-size:18px; letter-spacing:.35em; color:var(--c-text-soft); text-indent:.35em; }
 .date { font-weight:600; color:#6b454f; text-shadow:0 1px 3px rgba(0,0,0,0.06),0 2px 6px rgba(0,0,0,0.06); }
 
 /* Love doves image adjustments: make it shorter and sink a bit */
 .love-doves { display:flex; justify-content:center; margin-top:-62px; margin-bottom: -30px;}
-.love-doves img, .love-doves svg { width:120px; height:auto; transform:translateY(6px); display:block; }
+.love-doves img, .love-doves svg {
+  width:120px;
+  height:auto;
+  display:block;
+  /* avoid sub-pixel scaling; use GPU layer and crisp image hints where supported */
+  transform: translateY(6px) translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  /* try to favor crisper rendering on high-dpi displays */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  /* small, tasteful sharpen-like lift */
+  filter: contrast(1.06) saturate(1.04);
+}
 .love-doves img { object-fit:contain; }
 
 
