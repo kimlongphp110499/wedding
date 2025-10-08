@@ -18,10 +18,21 @@
     <div class="door" id="door-right"></div>
     <div class="intro-couple-center">
       <img src="images/MIT06069.jpg" alt="Chú rể" class="intro-char" id="intro-groom" />
-      <div id="intro-text">Mở thiệp cưới</div>
       <img src="images/MIT05950.jpg" alt="Cô dâu" class="intro-char" id="intro-bride" />
     </div>
+    <!-- Centered heart open button -->
+    <div id="intro-text" class="heart-button" role="button" tabindex="0" aria-label="Mở thiệp cưới">
+      <span class="open-text">Mở thiệp cưới</span>
+    </div>
   </div>
+
+  <!-- Main music: will be played when the intro is clicked -->
+  <audio id="main-audio" preload="auto">
+    <source src="images/chipmunkla-7kawn9a3-2827.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <button id="music-toggle" aria-label="Play music" style="position:fixed;bottom:14px;right:14px;padding:10px 12px;border-radius:999px;border:none;background:#ff8fa8;color:#fff;font-weight:600;font-size:14px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:9999;">🎵 Play</button>
 
   <div id="bg-hearts"></div>
   <div class="corner-flowers">
@@ -58,27 +69,27 @@
         <p class="fullname">Hồ Kim Khánh</p>
       </div>
       <div class="person groom">
-        <div class="avatar-wrap slideshow" data-role="groom" data-images="images/MIT06069.jpg,images/MIT06163.jpg">
+        <div class="avatar-wrap slideshow" data-role="groom" data-images="images/MIT06069.jpg,images/MIT06149.jpg">
           <img src="images/MIT06069.jpg" alt="Chú rể" class="avatar active" />
-          <img src="images/MIT06163.jpg" alt="Chú rể" class="avatar" />
+          <img src="images/MIT06149.jpg" alt="Chú rể" class="avatar" />
           <canvas class="avatar-filter" aria-hidden="true"></canvas>
         </div>
         <h3>Chú Rể</h3>
         <p class="fullname">Phan Văn Võ</p>
       </div>
     </section>
-
+<!-- 
     <section class="countdown" id="countdown">
       <div class="time"><span id="d">00</span><label>Ngày</label></div>
       <div class="time"><span id="h">00</span><label>Giờ</label></div>
       <div class="time"><span id="m">00</span><label>Phút</label></div>
       <div class="time"><span id="s">00</span><label>Giây</label></div>
-    </section>
+    </section> -->
 
     <section class="info-grid">
       <div class="info-item">
         <h4>Thời gian</h4>
-        <p>11:00 - 15/10/2025</p>
+        <p>10:00 - 15/10/2025</p>
       </div>
       <div class="info-item">
         <h4>Địa điểm</h4>

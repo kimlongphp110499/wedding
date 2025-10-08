@@ -7,37 +7,84 @@ window.addEventListener('DOMContentLoaded', () => {
 // ================= INTRO ANIMATION =================
 function initIntroAnimation() {
   const introOverlay = document.getElementById('intro-overlay');
-  if (!introOverlay || !window.gsap) {
-    document.querySelector('.card').style.visibility = 'visible';
-    runMainAnimations();
+  if (!introOverlay) return;
+  // if gsap not available, still attach click handler to open card
+  if (!window.gsap) {
+    const btn = document.getElementById('intro-text');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        document.querySelector('.card').style.visibility = 'visible';
+        runMainAnimations();
+        introOverlay.style.display = 'none';
+      }, { once: true });
+    }
     return;
   }
 
   // Create falling petals
   createFallingPetals();
 
-  const introTl = gsap.timeline({
-    onComplete: () => {
+  const introTl = gsap.timeline({ paused: true });
+
+  // Keep heart visible and stable - no animations on it
+  introTl
+    .from('#intro-bride', { opacity: 0, x: 100, duration: 1.2, ease: 'back.out(1.5)' }, 0.5)
+    .from('#intro-groom', { opacity: 0, x: -100, duration: 1.2, ease: 'back.out(1.5)' }, 0.5)
+    .to(['#intro-bride', '#intro-groom'], { scale: 1.2, opacity: 0, duration: 0.8 }, '+=0.5');
+
+  // Start intro only when the heart button is activated
+  const openBtn = document.getElementById('intro-text');
+  function startIntro() {
+    // Auto-play music on user activation
+    const audio = document.getElementById('main-audio');
+    const toggle = document.getElementById('music-toggle');
+    if (audio) {
+      audio.volume = 0.8;
+      audio.currentTime = 0;
+      audio.play().then(() => {
+        console.log('Audio playing');
+        if (toggle) toggle.textContent = '🔊 Pause';
+      }).catch(err => {
+        console.warn('Audio play failed:', err);
+      });
+    }
+    // Immediately trigger 3D door open so it responds right away to the user click.
+    // When doors finish, fade out the overlay and then reveal the card (runMainAnimations).
+    if (window.gsap) {
+      try {
+        const doorDuration = 1.0; // seconds
+        const doorsTl = gsap.timeline({ onStart: () => {
+          // hide the heart button when doors start to avoid overlap
+          const heart = document.getElementById('intro-text');
+          if (heart) heart.style.visibility = 'hidden';
+        }, onComplete: () => {
+          // fade overlay after doors finish
+          gsap.to(introOverlay, { opacity: 0, duration: 0.6, onComplete: () => {
+            introOverlay.style.display = 'none';
+            runMainAnimations();
+          } });
+        }});
+        doorsTl.to('#door-left', { transformOrigin: 'left center', rotateY: -100, duration: doorDuration, ease: 'power3.inOut' });
+        doorsTl.to('#door-right', { transformOrigin: 'right center', rotateY: 100, duration: doorDuration, ease: 'power3.inOut' }, '<');
+      } catch (e) {
+        console.warn('Door animation failed', e);
+        // fallback: reveal card immediately
+        introOverlay.style.display = 'none';
+        runMainAnimations();
+      }
+    } else {
+      // If gsap isn't available, reveal card immediately (existing fallback path covers this earlier)
       introOverlay.style.display = 'none';
       runMainAnimations();
     }
-  });
-
-  introTl
-    .from('#intro-text', { opacity: 0, y: -30, duration: 1, ease: 'power3.out' })
-    .from('#intro-bride', { opacity: 0, x: 100, duration: 1.2, ease: 'back.out(1.5)' }, 0.5)
-    .from('#intro-groom', { opacity: 0, x: -100, duration: 1.2, ease: 'back.out(1.5)' }, 0.5)
-    .to('#intro-text', { scale: 1.1, duration: 0.5, ease: 'power2.inOut', yoyo: true, repeat: 1 }, '+=0.3')
-    .to('#intro-text', { opacity: 0, duration: 0.5 }, '+=0.3')
-  // 3D door open
-  .to('#door-left', { transformOrigin: 'left center', rotateY: -100, duration: 1.3, ease: 'power3.inOut' }, '+=0.2')
-  .to('#door-right', { transformOrigin: 'right center', rotateY: 100, duration: 1.3, ease: 'power3.inOut' }, '<')
-    .to(['#intro-bride', '#intro-groom'], { scale: 1.2, opacity: 0, duration: 0.8 }, '<+=0.4')
-    .to(introOverlay, { opacity: 0, duration: 0.6 }, '>-0.4');
-
-  introOverlay.addEventListener('click', () => {
+    // play the rest of the intro timeline (visual elements animation)
     introTl.play();
-  }, { once: true });
+  }
+
+  if (openBtn) {
+    openBtn.addEventListener('click', startIntro, { once: true });
+    openBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); startIntro(); } }, { once: true });
+  }
 }
 
 // ================= FALLING PETALS =================
@@ -352,3 +399,20 @@ function spawnCardPetals() {
   }
   drop();
 }
+
+// Music toggle control wiring
+(function wireMusicToggle(){
+  const toggle = document.getElementById('music-toggle');
+  const audio = document.getElementById('main-audio');
+  if (!toggle || !audio) return;
+  toggle.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play().then(() => {
+        toggle.textContent = '🔊 Pause';
+      }).catch(err => console.error('Music play failed', err));
+    } else {
+      audio.pause();
+      toggle.textContent = '🎵 Play';
+    }
+  });
+})();
