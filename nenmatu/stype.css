@@ -409,11 +409,132 @@ body { background:var(--bg-grad); min-height:100dvh; display:flex; align-items:c
 .floral-frame .b1 { top:-12px; left:40px; }
 .floral-frame .b2 { top:40px; right:-12px; animation-delay:.8s; }
 .floral-frame .b3 { bottom:-10px; left:34px; animation-delay:1.4s; }
-.floral-frame .b4 { bottom:34px; right:-18px; animation-delay:2s; }
+.floral-frame .b4 { bottom:34px; right:-18px; animation-delay=2s; }
 
 .floral-frame .b4a { bottom:20px; right:18px; font-size:34px; animation-delay:2.1s; transform:rotate(-12deg); }
 .floral-frame .b4b { bottom:40px; right:0px; font-size:32px; animation-delay:2.35s; transform:rotate(8deg); }
 .floral-frame .b4c { bottom:8px; right:30px; font-size:29px; animation-delay:1.9s; transform:rotate(-6deg); opacity:0.95; }
+
+/* Top bridge blossoms (center coverage) */
+.floral-frame .bt1 { top:-18px; left:38%; font-size:30px; animation-delay:.25s; }
+.floral-frame .bt2 { top:-26px; left:44%; font-size:36px; animation-delay:.35s; }
+.floral-frame .bt3 { top:-14px; left:50%; font-size:28px; animation-delay:.45s; }
+.floral-frame .bt4 { top:-22px; left:56%; font-size:34px; animation-delay:.55s; }
+.floral-frame .bt5 { top:-10px; left:41%; font-size:26px; animation-delay:.65s; }
+.floral-frame .bt6 { top:-8px; left:47%; font-size:24px; animation-delay:.75s; }
+.floral-frame .bt7 { top:-16px; left:52%; font-size:32px; animation-delay:.85s; }
+.floral-frame .bt8 { top:-4px; left:59%; font-size:22px; animation-delay:.95s; }
+
+/* More top bridge blossoms to ensure full saturation */
+.floral-frame .bt21 { top:-40px; left:24%; font-size:30px; }
+.floral-frame .bt22 { top:-42px; left:28%; font-size:32px; }
+.floral-frame .bt23 { top:-44px; left:30%; font-size:34px; }
+.floral-frame .bt24 { top:-46px; left:34%; font-size:36px; }
+.floral-frame .bt25 { top:-44px; left:38%; font-size:34px; }
+.floral-frame .bt26 { top:-42px; left:42%; font-size:32px; }
+.floral-frame .bt27 { top:-40px; left:46%; font-size:30px; }
+.floral-frame .bt28 { top:-36px; left:50%; font-size:28px; }
+.floral-frame .bt29 { top:-34px; left:54%; font-size:26px; }
+.floral-frame .bt30 { top:-30px; left:58%; font-size:24px; }
+.floral-frame .bt31 { top:-28px; left:62%; font-size:26px; }
+.floral-frame .bt32 { top:-26px; left:66%; font-size:24px; }
+.floral-frame .bt33 { top:-24px; left:70%; font-size:22px; }
+.floral-frame .bt34 { top:-22px; left:74%; font-size:20px; }
+.floral-frame .bt35 { top:-20px; left:78%; font-size:18px; }
+.floral-frame .bt36 { top:-18px; left:82%; font-size:18px; opacity:0.9; }
+
+/* Even more top blossoms for full saturation */
+.floral-frame .bt37 { top:-44px; left:18%; font-size:28px; }
+.floral-frame .bt38 { top:-46px; left:22%; font-size:30px; }
+.floral-frame .bt39 { top:-48px; left:26%; font-size:32px; }
+.floral-frame .bt40 { top:-50px; left:30%; font-size:34px; }
+.floral-frame .bt41 { top:-48px; left:34%; font-size:32px; }
+.floral-frame .bt42 { top:-46px; left:36%; font-size:30px; }
+.floral-frame .bt43 { top:-44px; left:40%; font-size:28px; }
+.floral-frame .bt44 { top:-42px; left:44%; font-size:26px; }
+.floral-frame .bt45 { top:-40px; left:48%; font-size:28px; }
+.floral-frame .bt46 { top:-38px; left:52%; font-size:26px; }
+.floral-frame .bt47 { top:-36px; left:56%; font-size:24px; }
+.floral-frame .bt48 { top:-34px; left:60%; font-size:22px; }
+.floral-frame .bt49 { top:-32px; left:64%; font-size:24px; }
+.floral-frame .bt50 { top:-30px; left:68%; font-size:22px; }
+.floral-frame .bt51 { top:-28px; left:72%; font-size:20px; }
+.floral-frame .bt52 { top:-26px; left:76%; font-size:20px; }
+.floral-frame .bt53 { top:-24px; left:80%; font-size:18px; }
+.floral-frame .bt54 { top:-22px; left:84%; font-size:18px; }
+.floral-frame .bt55 { top:-20px; left:86%; font-size:18px; }
+.floral-frame .bt56 { top:-18px; left:88%; font-size:16px; }
+.floral-frame .bt57 { top:-16px; left:90%; font-size:16px; }
+.floral-frame .bt58 { top:-14px; left:92%; font-size:14px; }
+.floral-frame .bt59 { top:-12px; left:94%; font-size:14px; }
+.floral-frame .bt60 { top:-10px; left:96%; font-size:12px; opacity:0.9; }
+
+/* micro fillers bt61..bt90 */
+.floral-frame .bt61 { top:-42px; left:12%; font-size:14px; }
+.floral-frame .bt62 { top:-44px; left:14%; font-size:12px; }
+.floral-frame .bt63 { top:-46px; left:16%; font-size:16px; }
+.floral-frame .bt64 { top:-48px; left:18%; font-size:18px; }
+.floral-frame .bt65 { top:-46px; left:20%; font-size:14px; }
+.floral-frame .bt66 { top:-44px; left:22%; font-size:16px; }
+.floral-frame .bt67 { top:-42px; left:24%; font-size:14px; }
+.floral-frame .bt68 { top:-40px; left:26%; font-size:12px; }
+.floral-frame .bt69 { top:-38px; left:28%; font-size:14px; }
+.floral-frame .bt70 { top:-36px; left:30%; font-size:12px; }
+.floral-frame .bt71 { top:-34px; left:32%; font-size:14px; }
+.floral-frame .bt72 { top:-32px; left:34%; font-size:12px; }
+.floral-frame .bt73 { top:-30px; left:36%; font-size:14px; }
+.floral-frame .bt74 { top:-28px; left:38%; font-size:12px; }
+.floral-frame .bt75 { top:-26px; left:40%; font-size:14px; }
+.floral-frame .bt76 { top:-24px; left:42%; font-size:12px; }
+.floral-frame .bt77 { top:-22px; left:44%; font-size:14px; }
+.floral-frame .bt78 { top:-20px; left:46%; font-size:12px; }
+.floral-frame .bt79 { top:-18px; left:48%; font-size:14px; }
+.floral-frame .bt80 { top:-16px; left:50%; font-size:12px; }
+.floral-frame .bt81 { top:-14px; left:52%; font-size:14px; }
+.floral-frame .bt82 { top:-12px; left:54%; font-size:12px; }
+.floral-frame .bt83 { top:-10px; left:56%; font-size:14px; }
+.floral-frame .bt84 { top:-8px; left:58%; font-size:12px; }
+.floral-frame .bt85 { top:-6px; left:60%; font-size:14px; }
+.floral-frame .bt86 { top:-4px; left:62%; font-size:12px; }
+.floral-frame .bt87 { top:-2px; left:64%; font-size:14px; }
+.floral-frame .bt88 { top:0px; left:66%; font-size:12px; }
+.floral-frame .bt89 { top:2px; left:68%; font-size:14px; }
+.floral-frame .bt90 { top:4px; left:70%; font-size:12px; opacity:0.9; }
+
+/* micro fillers bt91..bt120 (final pass) */
+.floral-frame .bt91 { top:-46px; left:6%; font-size:10px; }
+.floral-frame .bt92 { top:-46px; left:8%; font-size:12px; }
+.floral-frame .bt93 { top:-46px; left:10%; font-size:10px; }
+.floral-frame .bt94 { top:-48px; left:12%; font-size:12px; }
+.floral-frame .bt95 { top:-48px; left:14%; font-size:10px; }
+.floral-frame .bt96 { top:-48px; left:16%; font-size:12px; }
+.floral-frame .bt97 { top:-46px; left:18%; font-size:10px; }
+.floral-frame .bt98 { top:-44px; left:20%; font-size:12px; }
+.floral-frame .bt99 { top:-42px; left:22%; font-size:10px; }
+.floral-frame .bt100{ top:-40px; left:24%; font-size:12px; }
+.floral-frame .bt101{ top:-38px; left:26%; font-size:10px; }
+.floral-frame .bt102{ top:-36px; left:28%; font-size:12px; }
+.floral-frame .bt103{ top:-34px; left:30%; font-size:10px; }
+.floral-frame .bt104{ top:-32px; left:32%; font-size:12px; }
+.floral-frame .bt105{ top:-30px; left:34%; font-size:10px; }
+.floral-frame .bt106{ top:-28px; left:36%; font-size:12px; }
+.floral-frame .bt107{ top:-26px; left:38%; font-size:10px; }
+.floral-frame .bt108{ top:-24px; left:40%; font-size:12px; }
+.floral-frame .bt109{ top:-22px; left:42%; font-size:10px; }
+.floral-frame .bt110{ top:-20px; left:44%; font-size:12px; }
+.floral-frame .bt111{ top:-18px; left:46%; font-size:10px; }
+.floral-frame .bt112{ top:-16px; left:48%; font-size:12px; }
+.floral-frame .bt113{ top:-14px; left:50%; font-size:10px; }
+.floral-frame .bt114{ top:-12px; left:52%; font-size:12px; }
+.floral-frame .bt115{ top:-10px; left:54%; font-size:10px; }
+.floral-frame .bt116{ top:-8px; left:56%; font-size:12px; }
+.floral-frame .bt117{ top:-6px; left:58%; font-size:10px; }
+.floral-frame .bt118{ top:-4px; left:60%; font-size:12px; }
+.floral-frame .bt119{ top:-2px; left:62%; font-size:10px; }
+.floral-frame .bt120{ top:0px; left:64%; font-size:12px; }
+
+/* Ultra-safety backdrop for any viewport */
+.floral-frame::before { content:""; position:absolute; top:0; left:0; right:0; height:420px; background:radial-gradient(circle at 50% 4%, rgba(255,255,255,0.998), rgba(255,255,255,0) 45%); pointer-events:none; z-index:-1; }
 
 /* =============== BOUQUET BLOOM =============== */
 .bouquet-bloom { position:fixed; bottom:25px; left:50%; transform:translateX(-50%) scale(.4); width:260px; height:160px; pointer-events:none; z-index:1; opacity:0; }
@@ -498,3 +619,27 @@ body { background:var(--bg-grad); min-height:100dvh; display:flex; align-items:c
   /* reset intro text positioning to fixed center within full overlay */
   #intro-text { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 }
+
+/* SATURATION: boost top density (final tuning) */
+.floral-frame .blossom { z-index: 9999; mix-blend-mode:normal; }
+/* enlarge & nudge key groups to fully cover corners */
+.floral-frame .bt1, .floral-frame .bt2, .floral-frame .bt3, .floral-frame .bt4,
+.floral-frame .bt9, .floral-frame .bt10, .floral-frame .bt11, .floral-frame .bt12,
+.floral-frame .bt21, .floral-frame .bt22, .floral-frame .bt23, .floral-frame .bt24,
+.floral-frame .bt37, .floral-frame .bt38, .floral-frame .bt39, .floral-frame .bt40 {
+  transform: scale(1.18) rotate(-4deg);
+  font-size: calc(var(--s, 1) * 36px) !important;
+  top: calc(-1 * (var(--t, 42px))) !important;
+}
+/* push some elements wider to cover extreme edges */
+.floral-frame .bt21 { left:20% !important; }
+.floral-frame .bt36 { left:86% !important; }
+.floral-frame .bt16 { left:62% !important; }
+.floral-frame .bt11 { left:44% !important; }
+/* scale a band of fillers to overlap more */
+.floral-frame .bt61, .floral-frame .bt62, .floral-frame .bt63, .floral-frame .bt64,
+.floral-frame .bt65, .floral-frame .bt66, .floral-frame .bt67, .floral-frame .bt68 {
+  transform: scale(1.1) !important; opacity:0.98;
+}
+/* Make backdrop taller and more opaque to mask any micro gaps */
+.floral-frame::before { content:""; position:absolute; top:0; left:0; right:0; height:520px; background:radial-gradient(circle at 50% 6%, rgba(255,255,255,0.999), rgba(255,255,255,0) 45%); pointer-events:none; z-index:-1; }
