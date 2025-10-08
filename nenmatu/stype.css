@@ -67,6 +67,28 @@
   overflow: hidden;
 }
 
+/* Desktop-specific door tuning: anchor images to inner edges, adjust width and size */
+@media (min-width: 900px) {
+  .door { width: 50vw; }
+
+  /* Left door: image anchored to right (inner edge) and scaled to show full figure */
+  #door-left {
+    background-size: 95% 95%, 100%; /* first layer is the photo: width% height% */
+    /* place the person near the inner edge (right side) */
+    background-position: right 8% center, center;
+  }
+
+  /* Right door: image anchored to left (inner edge) and scaled similarly */
+  #door-right {
+    background-size: 95% 95%, 100%;
+    /* place the person near the inner edge (left side) */
+    background-position: left 8% center, center;
+  }
+
+  /* Slightly reduce shadows on desktop doors for a flatter blend with page */
+  .door { box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
+}
+
 .intro-couple-center {
   display: flex;
   align-items: flex-end;
@@ -264,8 +286,8 @@
 }
 
 .flower-br {
-  bottom: 20px;
-  right: 20px;
+  bottom: 5px;
+  right: 5px;
   animation-delay: 1.5s;
 }
 
@@ -387,7 +409,11 @@ body { background:var(--bg-grad); min-height:100dvh; display:flex; align-items:c
 .floral-frame .b1 { top:-12px; left:40px; }
 .floral-frame .b2 { top:40px; right:-12px; animation-delay:.8s; }
 .floral-frame .b3 { bottom:-10px; left:34px; animation-delay:1.4s; }
-.floral-frame .b4 { bottom:34px; right:-8px; animation-delay:2s; }
+.floral-frame .b4 { bottom:34px; right:-18px; animation-delay:2s; }
+
+.floral-frame .b4a { bottom:20px; right:18px; font-size:34px; animation-delay:2.1s; transform:rotate(-12deg); }
+.floral-frame .b4b { bottom:40px; right:0px; font-size:32px; animation-delay:2.35s; transform:rotate(8deg); }
+.floral-frame .b4c { bottom:8px; right:30px; font-size:29px; animation-delay:1.9s; transform:rotate(-6deg); opacity:0.95; }
 
 /* =============== BOUQUET BLOOM =============== */
 .bouquet-bloom { position:fixed; bottom:25px; left:50%; transform:translateX(-50%) scale(.4); width:260px; height:160px; pointer-events:none; z-index:1; opacity:0; }
@@ -414,7 +440,7 @@ body { background:var(--bg-grad); min-height:100dvh; display:flex; align-items:c
 
 /* Running note (marquee) under footer */
 .running-note-wrap { overflow:hidden; width:100%; margin-top:8px; }
-.running-note { display:inline-block; white-space:nowrap; padding:10px 0; color:#8c2b3a; font-weight:600; font-size:14px; background:linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,240,245,0.6)); animation:runNote 14s linear infinite; }
+.running-note { background: #ffff !important; display:inline-block; white-space:nowrap; padding:10px 0; color:#8c2b3a; font-weight:600; font-size:14px; background:linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,240,245,0.6)); animation:runNote 18s linear infinite; }
 @keyframes runNote { from { transform:translateX(100%);} to { transform:translateX(-100%);} }
 
 /* =============== FLOAT HEARTS (BACKGROUND) =============== */
@@ -445,4 +471,30 @@ body { background:var(--bg-grad); min-height:100dvh; display:flex; align-items:c
 
 @media (prefers-reduced-motion:reduce) {
   *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition:none !important; }
+}
+
+/* Desktop overrides: restore full-page layout when viewport is wide */
+@media (min-width: 900px) {
+  /* overlay full-bleed again on desktop */
+  #intro-overlay {
+    position: fixed;
+    inset: 0;
+    width: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  /* fireworks canvas full-screen */
+  #fireworks-canvas { position:fixed; inset:0; width:100%; height:100%; top:0; left:0; transform:none; }
+
+  /* card goes back to centered desktop card size */
+  .card { width:100%; max-width:525px; padding:32px 26px 40px; gap:30px; min-height:680px; }
+
+  /* reset intro text positioning to fixed center within full overlay */
+  #intro-text { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 }

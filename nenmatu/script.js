@@ -57,7 +57,7 @@ function initIntroAnimation() {
       audio.currentTime = 0;
       audio.play().then(() => {
         console.log('Audio playing');
-        if (toggle) toggle.textContent = '🔊 Pause';
+        if (toggle) toggle.textContent = '🌼';
       }).catch(err => {
         console.warn('Audio play failed:', err);
       });
