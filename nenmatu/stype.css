@@ -339,10 +339,10 @@ body { background:var(--bg-grad); min-height:100dvh; display:flex; align-items:c
 /* =============== HERO =============== */
 .hero { text-align:center; display:flex; flex-direction:column; gap:10px; }
 .tag { display:inline-block; padding:4px 14px 5px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; background:#ffffffcc; border:1px solid var(--c-line); border-radius:40px; color:var(--c-text-soft); box-shadow:var(--shadow-sm); backdrop-filter:blur(6px); }
-.names { font-family:'Great Vibes',cursive; font-size:clamp(44px,11vw,68px); line-height:1; font-weight:400; color:#d66c80; display:flex; align-items:center; justify-content:center; gap:.35em; z-index: 9999999; }
+.names { font-family:'Great Vibes',cursive; font-size:clamp(44px,11vw,68px); line-height:1; font-weight:400; color:#e40b34; display:flex; align-items:center; justify-content:center; gap:.35em; z-index: 9999999; }
 .names span { text-shadow:0 2px 8px rgba(200,70,100,.25),0 0 2px #fff; }
 .names em { text-shadow:0 2px 6px rgba(200,70,100,.25); }
-.names em { font-style:normal; font-size:.6em; color:#e28b9d; position:relative; top:-6px; animation:amp 3s ease-in-out infinite; }
+.names em { font-style:normal; font-size:.6em; color:#e40b34; position:relative; top:-6px; animation:amp 3s ease-in-out infinite; }
 .date { font-family:'Playfair Display',serif; font-size:18px; letter-spacing:.35em; color:var(--c-text-soft); text-indent:.35em; }
 .date { font-weight:600; color:#7a5a5a; text-shadow:0 1px 4px rgba(255,255,255,.8),0 2px 6px rgba(160,70,90,.25); }
 
