@@ -409,7 +409,7 @@ body { background:var(--bg-grad); min-height:100dvh; display:flex; align-items:c
 .floral-frame .b1 { top:-12px; left:40px; }
 .floral-frame .b2 { top:40px; right:-12px; animation-delay:.8s; }
 .floral-frame .b3 { bottom:-10px; left:34px; animation-delay:1.4s; }
-.floral-frame .b4 { bottom:34px; right:-18px; animation-delay=2s; }
+.floral-frame .b4 { bottom:34px; right:-18px; animation-delay:2s; }
 
 .floral-frame .b4a { bottom:20px; right:18px; font-size:34px; animation-delay:2.1s; transform:rotate(-12deg); }
 .floral-frame .b4b { bottom:40px; right:0px; font-size:32px; animation-delay:2.35s; transform:rotate(8deg); }
